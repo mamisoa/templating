@@ -73,8 +73,8 @@ export function HeroSection() {
 					className='flex flex-wrap justify-center gap-8 text-center'>
 					{[
 						{ label: "Success Rate", value: "85%" },
-						{ label: "Business Model Patterns", value: "50+" },
-						{ label: "Time Saved", value: "60%" },
+						{ label: "Projects validated", value: "500+" },
+						{ label: "Time Saved", value: "80%" },
 					].map((stat) => (
 						<div key={stat.label} className='flex flex-col'>
 							<span className='text-2xl font-bold'>{stat.value}</span>
