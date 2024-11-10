@@ -38,7 +38,9 @@ export function KeyBenefits() {
 			visible: {
 				opacity: 1,
 				transition: {
-					staggerChildren: 0.2,
+					staggerChildren: 0.3, // Increased from 0.2
+					delayChildren: 0.2, // Added delay before children start
+					duration: 0.8, // Added overall container animation duration
 				},
 			},
 		}),
@@ -47,12 +49,13 @@ export function KeyBenefits() {
 
 	const itemVariants = useMemo(
 		() => ({
-			hidden: { opacity: 0, y: 20 },
+			hidden: { opacity: 0, y: 40 }, // Increased initial offset
 			visible: {
 				opacity: 1,
 				y: 0,
 				transition: {
-					duration: 0.5,
+					duration: 0.8, // Increased from 0.5
+					ease: "easeOut", // Added easing function
 				},
 			},
 		}),
@@ -73,7 +76,11 @@ export function KeyBenefits() {
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.5 }}
+					transition={{
+						duration: 0.8,
+						ease: "easeOut",
+						delay: 0.1,
+					}}
 					className='text-center mb-12'>
 					<h2 className='text-3xl md:text-4xl font-bold mb-4'>
 						Why Choose Our Platform?
@@ -98,7 +105,7 @@ export function KeyBenefits() {
 							<motion.div
 								key={benefit.title}
 								variants={itemVariants}
-								className='group relative flex flex-col items-center text-center p-6 rounded-2xl border bg-card/5 hover:bg-card/10 transition-all duration-300'>
+								className='group relative flex flex-col items-center text-center p-6 rounded-2xl border bg-card/5 hover:bg-card/10 transition-all duration-500'>
 								<div
 									className={`p-4 rounded-xl ${benefit.color} bg-background/20 transition-transform duration-300 group-hover:scale-110`}>
 									<Icon className='h-8 w-8' />
