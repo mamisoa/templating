@@ -31,8 +31,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background`}>
 				<ThemeProvider
 					attribute='class'
-					defaultTheme='system'
-					enableSystem
+					defaultTheme='dark'
 					disableTransitionOnChange>
 					{children}
 				</ThemeProvider>
