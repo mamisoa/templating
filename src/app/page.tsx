@@ -21,12 +21,18 @@ export default function Home() {
 					<div className='flex h-full items-center justify-between'>
 						<div className='flex items-center space-x-6'>
 							<NavigationLogo />
-							<Separator orientation='vertical' className='h-6' />
+							<Separator
+								orientation='vertical'
+								className='h-6 hidden md:block'
+							/>
 							<NavigationMenu />
 						</div>
-						<div className='flex items-center space-x-4'>
-							<Button>Get Started</Button>
+						<div className='hidden md:flex items-center space-x-4'>
 							<Button variant='outline'>Login</Button>
+							<Button>Get Started</Button>
+							<ThemeToggle />
+						</div>
+						<div className='flex md:hidden items-center space-x-4'>
 							<ThemeToggle />
 						</div>
 					</div>
