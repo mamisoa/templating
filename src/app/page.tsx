@@ -1,56 +1,78 @@
-import Image from "next/image";
+import { Button } from "@/src/app/components/ui/button";
+import { Separator } from "@/src/app/components/ui/separator";
+import { HeroSection } from "./components/sections/hero";
+import { KeyBenefits } from "./components/sections/key-benefits";
+import { HowItWorks } from "./components/sections/how-it-works";
+import { FeaturesShowcase } from "./components/sections/sections";
+import { FooterContent } from "./components/footer/content";
+import { NavigationLogo } from "./components/navigation/logo";
+import { NavigationMenu } from "./components/navigation/menu";
+import { CallToAction } from "./components/sections/cta";
+import { PricingSection } from "./components/sections/pricing";
+import { SocialProof } from "./components/sections/social-proof";
+import { ThemeToggle } from "./components/theme-toggle";
 
 export default function Home() {
 	return (
-		<div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
-			<main className='flex flex-col gap-8 row-start-2 items-center sm:items-start'>
-				<div className='text-3xl'>
-					<h1>Hello world!</h1>
+		<div className='flex flex-col min-h-screen'>
+			{/* Navigation */}
+			<header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+				<div className='container flex h-14 items-center'>
+					<div className='flex items-center space-x-6 mr-4'>
+						<NavigationLogo />
+						<Separator orientation='vertical' className='h-6' />
+						<NavigationMenu />
+					</div>
+					<div className='flex flex-1 items-center justify-end space-x-4'>
+						<Button variant='outline'>Login</Button>
+						<Button>Get Started</Button>
+						<ThemeToggle />
+					</div>
 				</div>
+			</header>
+
+			<main className='flex-1'>
+				{/* Hero Section */}
+				<section className='container py-20'>
+					<HeroSection />
+				</section>
+
+				{/* Key Benefits */}
+				<section className='container py-16 bg-muted/50'>
+					<KeyBenefits />
+				</section>
+
+				{/* How It Works */}
+				<section className='container py-16'>
+					<HowItWorks />
+				</section>
+
+				{/* Features */}
+				<section className='container py-16 bg-muted/50'>
+					<FeaturesShowcase />
+				</section>
+
+				{/* Pricing */}
+				<section className='container py-16'>
+					<PricingSection />
+				</section>
+
+				{/* Social Proof */}
+				<section className='container py-16 bg-muted/50'>
+					<SocialProof />
+				</section>
+
+				{/* CTA */}
+				<section className='container py-16'>
+					<CallToAction />
+				</section>
 			</main>
-			<footer className='row-start-3 flex gap-6 flex-wrap items-center justify-center'>
-				<a
-					className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-					href='https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-					target='_blank'
-					rel='noopener noreferrer'>
-					<Image
-						aria-hidden
-						src='/file.svg'
-						alt='File icon'
-						width={16}
-						height={16}
-					/>
-					Learn
-				</a>
-				<a
-					className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-					href='https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-					target='_blank'
-					rel='noopener noreferrer'>
-					<Image
-						aria-hidden
-						src='/window.svg'
-						alt='Window icon'
-						width={16}
-						height={16}
-					/>
-					Examples
-				</a>
-				<a
-					className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-					href='https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-					target='_blank'
-					rel='noopener noreferrer'>
-					<Image
-						aria-hidden
-						src='/globe.svg'
-						alt='Globe icon'
-						width={16}
-						height={16}
-					/>
-					Go to nextjs.org →
-				</a>
+
+			{/* Footer */}
+			<footer className='border-t'>
+				<div className='container py-16'>
+					<FooterContent />
+				</div>
 			</footer>
 		</div>
 	);
