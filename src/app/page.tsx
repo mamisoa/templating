@@ -33,51 +33,37 @@ export default function Home() {
 				</div>
 			</header>
 
-			{/* Main scroll container - positioned absolutely below header */}
-			<main className='absolute top-14 left-0 right-0 bottom-0 overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth'>
-				{/* Section wrapper */}
-				<div className='relative'>
-					{/* Individual sections */}
-					<section className='h-[100vh] w-full snap-start snap-always'>
-						<div className='h-[calc(100vh-3.5rem)]'>
-							<HeroSection />
-						</div>
+			{/* Main scroll container */}
+			<main className='fixed top-14 inset-x-0 bottom-0 overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth'>
+				{/* Sections container */}
+				<div className='min-h-full'>
+					{/* Individual sections - each takes exactly the visible area */}
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<HeroSection />
 					</section>
 
-					<section className='h-[100vh] w-full snap-start snap-always'>
-						<div className='h-[calc(100vh-3.5rem)]'>
-							<KeyBenefits />
-						</div>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<KeyBenefits />
 					</section>
 
-					<section className='h-[100vh] w-full snap-start snap-always'>
-						<div className='h-[calc(100vh-3.5rem)]'>
-							<HowItWorks />
-						</div>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<HowItWorks />
 					</section>
 
-					<section className='h-[100vh] w-full snap-start snap-always'>
-						<div className='h-[calc(100vh-3.5rem)]'>
-							<FeaturesShowcase />
-						</div>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<FeaturesShowcase />
 					</section>
 
-					<section className='h-[100vh] w-full snap-start snap-always'>
-						<div className='h-[calc(100vh-3.5rem)]'>
-							<PricingSection />
-						</div>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<PricingSection />
 					</section>
 
-					<section className='h-[100vh] w-full snap-start snap-always'>
-						<div className='h-[calc(100vh-3.5rem)]'>
-							<SocialProof />
-						</div>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<SocialProof />
 					</section>
 
-					<section className='h-[100vh] w-full snap-start snap-always'>
-						<div className='h-[calc(100vh-3.5rem)]'>
-							<CallToAction />
-						</div>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<CallToAction />
 					</section>
 
 					{/* Footer */}
