@@ -141,8 +141,9 @@
 		#60a5fa,
 		/* lighter blue */ #34d399,
 		/* fresh green */ #10b981,
-		/* emerald */ #60a5fa /* back to blue for seamless loop */
+		/* emerald */ #0ea5e9,
+		/* sky blue */ #60a5fa /* back to lighter blue */
 	);
-	background-size: 200% 100%;
-	animation: gradientFlow 8s linear infinite;
+	background-size: 300% 100%;
+	animation: gradientFlow 12s linear infinite;
 }
