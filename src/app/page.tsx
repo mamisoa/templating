@@ -41,52 +41,38 @@ export default function Home() {
 
 				{/* Key Benefits */}
 				<section className='py-16 bg-muted/50'>
-					<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-						<KeyBenefits />
-					</div>
+					<KeyBenefits />
 				</section>
 
 				{/* How It Works */}
 				<section className='py-16'>
-					<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-						<HowItWorks />
-					</div>
+					<HowItWorks />
 				</section>
 
 				{/* Features */}
 				<section className='py-16 bg-muted/50'>
-					<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-						<FeaturesShowcase />
-					</div>
+					<FeaturesShowcase />
 				</section>
 
 				{/* Pricing */}
 				<section className='py-16'>
-					<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-						<PricingSection />
-					</div>
+					<PricingSection />
 				</section>
 
 				{/* Social Proof */}
 				<section className='py-16 bg-muted/50'>
-					<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-						<SocialProof />
-					</div>
+					<SocialProof />
 				</section>
 
 				{/* CTA */}
 				<section className='py-16'>
-					<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-						<CallToAction />
-					</div>
+					<CallToAction />
 				</section>
 			</main>
 
 			{/* Footer */}
 			<footer className='border-t'>
-				<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
-					<FooterContent />
-				</div>
+				<FooterContent />
 			</footer>
 		</div>
 	);
