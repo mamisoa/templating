@@ -68,6 +68,36 @@ export function HowItWorks() {
 		},
 	};
 
+	// Shared circle styling component
+	const StyledCircle = ({
+		index,
+		color,
+		className = "",
+	}: {
+		index: number;
+		color: string;
+		className?: string;
+	}) => (
+		<motion.div
+			initial={{ scale: 0 }}
+			whileInView={{ scale: 1 }}
+			viewport={{ once: true }}
+			transition={{ delay: 0.5, duration: 0.3 }}
+			className={cn(
+				"w-12 h-12 rounded-full flex items-center justify-center font-bold relative",
+				"text-background",
+				"before:absolute before:inset-0 before:rounded-full before:border-2",
+				"before:border-current before:animate-pulse",
+				"after:absolute after:inset-1 after:rounded-full",
+				"border-2 border-current",
+				color.replace("text-", "bg-"),
+				"shadow-lg",
+				className
+			)}>
+			{index + 1}
+		</motion.div>
+	);
+
 	return (
 		<div
 			className='min-h-[calc(100vh-3.5rem)] w-full relative flex items-center justify-center overflow-hidden py-12 lg:py-0'
@@ -145,44 +175,16 @@ export function HowItWorks() {
 
 									{/* Timeline Node - Desktop */}
 									<div className='relative hidden lg:flex items-center justify-center'>
-										<motion.div
-											initial={{ scale: 0 }}
-											whileInView={{ scale: 1 }}
-											viewport={{ once: true }}
-											transition={{ delay: 0.5, duration: 0.3 }}
-											className={cn(
-												"w-12 h-12 rounded-full flex items-center justify-center font-bold relative",
-												"text-background", // Make the number white/background colored
-												"before:absolute before:inset-0 before:rounded-full before:border-2",
-												"before:border-current before:animate-pulse",
-												"after:absolute after:inset-1 after:rounded-full",
-												"border-2 border-current",
-												"relative z-10",
-												// Fill the circle with the theme color instead of background
-												step.color.replace("text-", "bg-"),
-												// Add margin to separate from the line
-												isOdd ? "-ml-6" : "-mr-6",
-												"shadow-lg"
-											)}>
-											{index + 1}
-										</motion.div>
+										<StyledCircle
+											index={index}
+											color={step.color}
+											className={isOdd ? "-ml-6" : "-mr-6"}
+										/>
 									</div>
 
 									{/* Timeline Node - Mobile */}
 									<div className='flex lg:hidden items-center justify-center'>
-										<motion.div
-											initial={{ scale: 0 }}
-											whileInView={{ scale: 1 }}
-											viewport={{ once: true }}
-											transition={{ delay: 0.5, duration: 0.3 }}
-											className={cn(
-												"w-10 h-10 rounded-full flex items-center justify-center font-bold",
-												step.color,
-												"border-4 border-background",
-												"bg-background"
-											)}>
-											{index + 1}
-										</motion.div>
+										<StyledCircle index={index} color={step.color} />
 									</div>
 
 									{/* Spacer for alternating layout on desktop */}
