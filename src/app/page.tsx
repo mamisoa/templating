@@ -14,11 +14,11 @@ import { Footer } from "./components/footer/content";
 
 export default function Home() {
 	return (
-		<div className='relative h-screen overflow-x-hidden'>
+		<div className='relative min-h-screen'>
 			{/* Navigation */}
-			<header className='fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-				<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-					<div className='flex h-14 items-center justify-between'>
+			<header className='fixed top-0 z-50 w-full h-14 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+				<div className='h-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
+					<div className='flex h-full items-center justify-between'>
 						<div className='flex items-center space-x-6'>
 							<NavigationLogo />
 							<Separator orientation='vertical' className='h-6' />
@@ -34,41 +34,40 @@ export default function Home() {
 			</header>
 
 			{/* Main Content */}
-			<main className='h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth'>
-				{/* Sections Container */}
-				<div className='pt-14'>
-					{/* Hero Section */}
-					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
+			<main className='h-[calc(100vh-3.5rem)] mt-14 overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth'>
+				{/* Sections */}
+				<div className='relative'>
+					{/* Each section takes exactly viewport height minus navbar */}
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<HeroSection />
-					</div>
+					</section>
 
-					{/* Key Benefits */}
-					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<KeyBenefits />
-					</div>
+					</section>
 
-					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<HowItWorks />
-					</div>
+					</section>
 
-					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<FeaturesShowcase />
-					</div>
+					</section>
 
-					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<PricingSection />
-					</div>
+					</section>
 
-					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<SocialProof />
-					</div>
+					</section>
 
-					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
+					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<CallToAction />
-					</div>
+					</section>
 
 					{/* Footer */}
-					<footer className='border-t relative z-10 snap-end overflow-x-hidden'>
+					<footer className='border-t relative snap-end'>
 						<Footer />
 					</footer>
 				</div>

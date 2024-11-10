@@ -121,6 +121,11 @@
 		position: relative; /* Added */
 		overflow-x: hidden; /* Added */
 	}
+
+	.section-height {
+		height: calc(100vh - 3.5rem);
+		min-height: min-content; /* Ensures content doesn't get cut off on small screens */
+	}
 }
 
 @keyframes gradientFlow {
