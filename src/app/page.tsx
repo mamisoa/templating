@@ -26,8 +26,8 @@ export default function Home() {
 							<NavigationMenu />
 						</div>
 						<div className='flex items-center space-x-4'>
-							<Button variant='outline'>Login</Button>
 							<Button>Get Started</Button>
+							<Button variant='outline'>Login</Button>
 							<ThemeToggle />
 						</div>
 					</div>
