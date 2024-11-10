@@ -47,7 +47,6 @@ export default function Home() {
 						<KeyBenefits />
 					</section>
 
-					{/* Other sections... */}
 					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<HowItWorks />
 					</section>

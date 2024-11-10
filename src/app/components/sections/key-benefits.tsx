@@ -38,9 +38,9 @@ export function KeyBenefits() {
 			visible: {
 				opacity: 1,
 				transition: {
-					staggerChildren: 0.3, // Increased from 0.2
-					delayChildren: 0.2, // Added delay before children start
-					duration: 0.8, // Added overall container animation duration
+					staggerChildren: 0.3,
+					delayChildren: 0.2,
+					duration: 0.8,
 				},
 			},
 		}),
@@ -49,13 +49,13 @@ export function KeyBenefits() {
 
 	const itemVariants = useMemo(
 		() => ({
-			hidden: { opacity: 0, y: 40 }, // Increased initial offset
+			hidden: { opacity: 0, y: 40 },
 			visible: {
 				opacity: 1,
 				y: 0,
 				transition: {
-					duration: 0.8, // Increased from 0.5
-					ease: "easeOut", // Added easing function
+					duration: 0.8,
+					ease: "easeOut",
 				},
 			},
 		}),
@@ -63,12 +63,14 @@ export function KeyBenefits() {
 	);
 
 	return (
-		<div className='h-[calc(100vh-3.5rem)] w-full relative flex items-center justify-center overflow-hidden bg-background'>
-			{/* Grid Pattern */}
-			<div className='absolute inset-0 w-full h-full'>
-				<div className='absolute inset-0 bg-grid-pattern opacity-5' />
-			</div>
-
+		<div
+			className='h-[calc(100vh-3.5rem)] w-full relative flex items-center justify-center overflow-hidden'
+			style={{
+				background: `linear-gradient(135deg, 
+          hsl(var(--secondary)/0.1) 0%, 
+          hsl(var(--background)) 50%,
+          hsl(var(--primary)/0.1) 100%)`,
+			}}>
 			{/* Content Container */}
 			<div className='relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
 				{/* Section Header */}
@@ -105,9 +107,9 @@ export function KeyBenefits() {
 							<motion.div
 								key={benefit.title}
 								variants={itemVariants}
-								className='group relative flex flex-col items-center text-center p-6 rounded-2xl border bg-card/5 hover:bg-card/10 transition-all duration-500'>
+								className='group relative flex flex-col items-center text-center p-6 rounded-2xl border bg-card hover:bg-card/80 transition-all duration-500'>
 								<div
-									className={`p-4 rounded-xl ${benefit.color} bg-background/20 transition-transform duration-300 group-hover:scale-110`}>
+									className={`p-4 rounded-xl ${benefit.color} transition-transform duration-300 group-hover:scale-110`}>
 									<Icon className='h-8 w-8' />
 								</div>
 								<h3 className='text-xl font-semibold mt-4 mb-2'>
@@ -118,12 +120,6 @@ export function KeyBenefits() {
 						);
 					})}
 				</motion.div>
-			</div>
-
-			{/* Gradient Beams */}
-			<div className='absolute inset-0 -z-10'>
-				<div className='absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[128px] -translate-y-1/2' />
-				<div className='absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-secondary/10 blur-[128px] -translate-y-1/2' />
 			</div>
 		</div>
 	);
