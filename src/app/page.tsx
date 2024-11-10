@@ -10,12 +10,12 @@ import { FeaturesShowcase } from "@/src/app/components/sections/features";
 import { PricingSection } from "@/src/app/components/sections/pricing";
 import { SocialProof } from "@/src/app/components/sections/social-proof";
 import { CallToAction } from "@/src/app/components/sections/cta";
-import { Footer } from "./components/footer/content";
+import { Footer } from "@/src/app/components/footer/content";
 
 export default function Home() {
 	return (
-		<div className='relative min-h-screen'>
-			{/* Navigation */}
+		<div className='relative h-screen overflow-hidden'>
+			{/* Navigation - fixed at top, excluded from scroll container */}
 			<header className='fixed top-0 z-50 w-full h-14 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
 				<div className='h-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='flex h-full items-center justify-between'>
@@ -33,36 +33,36 @@ export default function Home() {
 				</div>
 			</header>
 
-			{/* Main Content */}
-			<main className='h-[calc(100vh-3.5rem)] mt-14 overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth'>
-				{/* Sections */}
+			{/* Main scroll container - starts after header */}
+			<main className='h-screen pt-14 overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth'>
+				{/* Section wrapper - no height constraint */}
 				<div className='relative'>
-					{/* Each section takes exactly viewport height minus navbar */}
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					{/* Individual sections */}
+					<section className='h-[calc(100vh-3.5rem)] w-full snap-start snap-always'>
 						<HeroSection />
 					</section>
 
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<section className='h-[calc(100vh-3.5rem)] w-full snap-start snap-always'>
 						<KeyBenefits />
 					</section>
 
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<section className='h-[calc(100vh-3.5rem)] w-full snap-start snap-always'>
 						<HowItWorks />
 					</section>
 
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<section className='h-[calc(100vh-3.5rem)] w-full snap-start snap-always'>
 						<FeaturesShowcase />
 					</section>
 
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<section className='h-[calc(100vh-3.5rem)] w-full snap-start snap-always'>
 						<PricingSection />
 					</section>
 
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<section className='h-[calc(100vh-3.5rem)] w-full snap-start snap-always'>
 						<SocialProof />
 					</section>
 
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<section className='h-[calc(100vh-3.5rem)] w-full snap-start snap-always'>
 						<CallToAction />
 					</section>
 

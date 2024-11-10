@@ -156,17 +156,20 @@
 }
 
 @layer base {
-	/* For Firefox */
+	/* Scrollbar Styles */
 	* {
-		scrollbar-width: thin;
-		scrollbar-color: hsl(var(--primary)) transparent;
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none; /* IE and Edge */
 	}
 
-	/* For Chrome, Safari, and Edge */
-	::-webkit-scrollbar {
-		width: 0px; /* Hide scrollbar but keep functionality */
+	*::-webkit-scrollbar {
+		display: none; /* Chrome, Safari and Opera */
 	}
 
+	/* Prevent layout shift from scrollbar */
+	html {
+		scrollbar-gutter: stable;
+	}
 	/* Optional: if you want a visible but thin scrollbar */
 	/*
   ::-webkit-scrollbar {
@@ -190,11 +193,8 @@
 }
 
 @layer utilities {
-	.no-scrollbar {
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
-	.no-scrollbar::-webkit-scrollbar {
-		display: none; /* Chrome, Safari and Opera */
+	.section-height {
+		height: calc(100vh - 3.5rem);
+		min-height: min-content;
 	}
 }
