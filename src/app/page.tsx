@@ -1,3 +1,4 @@
+// src/app/page.tsx
 import { Button } from "@/src/app/components/ui/button";
 import { Separator } from "@/src/app/components/ui/separator";
 import { ThemeToggle } from "@/src/app/components/theme-toggle";
@@ -16,7 +17,7 @@ export default function Home() {
 	return (
 		<div className='flex flex-col min-h-screen w-full'>
 			{/* Navigation */}
-			<header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+			<header className='fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
 				<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='flex h-14 items-center justify-between'>
 						<div className='flex items-center space-x-6'>
@@ -33,45 +34,44 @@ export default function Home() {
 				</div>
 			</header>
 
-			<main className='flex-1 w-full'>
-				{/* Hero Section */}
-				<section className='w-full min-h-[calc(100vh-3.5rem)]'>
-					<HeroSection />
-				</section>
+			<main className='flex-1 w-full mt-14'>
+				{/* Sections Container with Snap Scroll */}
+				<div className='relative w-full h-[calc(100vh-3.5rem)] overflow-y-auto snap-y snap-mandatory bg-background'>
+					{/* Hero Section */}
+					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<HeroSection />
+					</section>
 
-				{/* Key Benefits */}
-				<section className='py-16 bg-muted/50'>
-					<KeyBenefits />
-				</section>
+					{/* Key Benefits */}
+					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<KeyBenefits />
+					</section>
 
-				{/* How It Works */}
-				<section className='py-16'>
-					<HowItWorks />
-				</section>
+					{/* Other sections... */}
+					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<HowItWorks />
+					</section>
 
-				{/* Features */}
-				<section className='py-16 bg-muted/50'>
-					<FeaturesShowcase />
-				</section>
+					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<FeaturesShowcase />
+					</section>
 
-				{/* Pricing */}
-				<section className='py-16'>
-					<PricingSection />
-				</section>
+					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<PricingSection />
+					</section>
 
-				{/* Social Proof */}
-				<section className='py-16 bg-muted/50'>
-					<SocialProof />
-				</section>
+					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<SocialProof />
+					</section>
 
-				{/* CTA */}
-				<section className='py-16'>
-					<CallToAction />
-				</section>
+					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+						<CallToAction />
+					</section>
+				</div>
 			</main>
 
 			{/* Footer */}
-			<footer className='border-t'>
+			<footer className='border-t relative z-10'>
 				<FooterContent />
 			</footer>
 		</div>
