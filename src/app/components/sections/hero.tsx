@@ -72,8 +72,8 @@ export function HeroSection() {
 					transition={{ duration: 0.5, delay: 0.8 }}
 					className='flex flex-wrap justify-center gap-8 text-center'>
 					{[
-						{ label: "Business Model Patterns", value: "50+" },
 						{ label: "Success Rate", value: "85%" },
+						{ label: "Business Model Patterns", value: "50+" },
 						{ label: "Time Saved", value: "60%" },
 					].map((stat) => (
 						<div key={stat.label} className='flex flex-col'>

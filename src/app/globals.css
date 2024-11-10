@@ -139,11 +139,13 @@
 	background: linear-gradient(
 		90deg,
 		#60a5fa,
-		/* lighter blue */ #34d399,
+		/* lighter blue */ #818cf8,
+		/* indigo */ #a78bfa,
+		/* purple */ #34d399,
 		/* fresh green */ #10b981,
 		/* emerald */ #0ea5e9,
 		/* sky blue */ #60a5fa /* back to lighter blue */
 	);
-	background-size: 300% 100%;
-	animation: gradientFlow 12s linear infinite;
+	background-size: 400% 100%;
+	animation: gradientFlow 5s linear infinite;
 }
