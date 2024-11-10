@@ -122,3 +122,27 @@
 		margin-right: calc(50% - 50vw);
 	}
 }
+
+@keyframes gradientFlow {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.modern-gradient {
+	background: linear-gradient(
+		90deg,
+		#60a5fa,
+		/* lighter blue */ #34d399,
+		/* fresh green */ #10b981,
+		/* emerald */ #60a5fa /* back to blue for seamless loop */
+	);
+	background-size: 200% 100%;
+	animation: gradientFlow 8s linear infinite;
+}
