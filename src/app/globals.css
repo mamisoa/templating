@@ -117,9 +117,9 @@
 
 	.full-screen {
 		min-height: calc(100vh - 3.5rem);
-		width: 100vw;
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
+		width: 100%; /* Changed from 100vw */
+		position: relative; /* Added */
+		overflow-x: hidden; /* Added */
 	}
 }
 
@@ -148,4 +148,48 @@
 	);
 	background-size: 400% 100%;
 	animation: gradientFlow 5s linear infinite;
+}
+
+@layer base {
+	/* For Firefox */
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: hsl(var(--primary)) transparent;
+	}
+
+	/* For Chrome, Safari, and Edge */
+	::-webkit-scrollbar {
+		width: 0px; /* Hide scrollbar but keep functionality */
+	}
+
+	/* Optional: if you want a visible but thin scrollbar */
+	/*
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--primary));
+    border-radius: 3px;
+  }
+  */
+
+	/* Prevent layout shift from scrollbar */
+	html {
+		scrollbar-gutter: stable;
+	}
+}
+
+@layer utilities {
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none; /* Chrome, Safari and Opera */
+	}
 }

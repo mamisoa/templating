@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import { Button } from "@/src/app/components/ui/button";
 import { Separator } from "@/src/app/components/ui/separator";
 import { ThemeToggle } from "@/src/app/components/theme-toggle";
@@ -11,11 +10,11 @@ import { FeaturesShowcase } from "@/src/app/components/sections/features";
 import { PricingSection } from "@/src/app/components/sections/pricing";
 import { SocialProof } from "@/src/app/components/sections/social-proof";
 import { CallToAction } from "@/src/app/components/sections/cta";
-import { FooterContent } from "@/src/app/components/footer/content";
+import { Footer } from "./components/footer/content";
 
 export default function Home() {
 	return (
-		<div className='flex flex-col min-h-screen w-full'>
+		<div className='relative h-screen overflow-x-hidden'>
 			{/* Navigation */}
 			<header className='fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
 				<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -34,45 +33,46 @@ export default function Home() {
 				</div>
 			</header>
 
-			<main className='flex-1 w-full mt-14'>
-				{/* Sections Container with Snap Scroll */}
-				<div className='relative w-full h-[calc(100vh-3.5rem)] overflow-y-auto snap-y snap-mandatory bg-background'>
+			{/* Main Content */}
+			<main className='h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth'>
+				{/* Sections Container */}
+				<div className='pt-14'>
 					{/* Hero Section */}
-					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
 						<HeroSection />
-					</section>
+					</div>
 
 					{/* Key Benefits */}
-					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
 						<KeyBenefits />
-					</section>
+					</div>
 
-					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
 						<HowItWorks />
-					</section>
+					</div>
 
-					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
 						<FeaturesShowcase />
-					</section>
+					</div>
 
-					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
 						<PricingSection />
-					</section>
+					</div>
 
-					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
 						<SocialProof />
-					</section>
+					</div>
 
-					<section className='relative w-full h-[calc(100vh-3.5rem)] snap-start snap-always'>
+					<div className='h-[calc(100vh-3.5rem)] snap-start snap-always overflow-x-hidden'>
 						<CallToAction />
-					</section>
+					</div>
+
+					{/* Footer */}
+					<footer className='border-t relative z-10 snap-end overflow-x-hidden'>
+						<Footer />
+					</footer>
 				</div>
 			</main>
-
-			{/* Footer */}
-			<footer className='border-t relative z-10'>
-				<FooterContent />
-			</footer>
 		</div>
 	);
 }

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/src/app/components/theme-provider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -34,6 +36,18 @@ export default function RootLayout({
 					defaultTheme='dark'
 					disableTransitionOnChange>
 					{children}
+					<ToastContainer
+						position='bottom-right'
+						autoClose={5000}
+						hideProgressBar={false}
+						newestOnTop
+						closeOnClick
+						rtl={false}
+						pauseOnFocusLoss
+						draggable
+						pauseOnHover
+						theme='dark'
+					/>
 				</ThemeProvider>
 			</body>
 		</html>
