@@ -14,7 +14,7 @@ import { FooterContent } from "@/src/app/components/footer/content";
 
 export default function Home() {
 	return (
-		<div className='flex flex-col min-h-screen'>
+		<div className='flex flex-col min-h-screen w-full'>
 			{/* Navigation */}
 			<header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
 				<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -33,12 +33,10 @@ export default function Home() {
 				</div>
 			</header>
 
-			<main className='flex-1'>
+			<main className='flex-1 w-full'>
 				{/* Hero Section */}
-				<section className='py-20'>
-					<div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
-						<HeroSection />
-					</div>
+				<section className='w-full min-h-[calc(100vh-3.5rem)]'>
+					<HeroSection />
 				</section>
 
 				{/* Key Benefits */}

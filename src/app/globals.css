@@ -87,6 +87,38 @@
 	background: linear-gradient(
 		135deg,
 		hsl(var(--primary)) 0%,
-		hsl(var(--secondary)) 100%
+		hsl(var(--secondary)) 50%,
+		hsl(var(--accent)) 100%
 	);
+}
+
+@layer utilities {
+	.bg-grid-pattern {
+		background-size: 100px 100px;
+		background-image: linear-gradient(
+				to right,
+				rgb(var(--foreground) / 0.05) 1px,
+				transparent 1px
+			),
+			linear-gradient(
+				to bottom,
+				rgb(var(--foreground) / 0.05) 1px,
+				transparent 1px
+			);
+	}
+
+	.mask-radial-faded {
+		mask-image: radial-gradient(
+			circle at center center,
+			black,
+			transparent 80%
+		);
+	}
+
+	.full-screen {
+		min-height: calc(100vh - 3.5rem);
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+	}
 }
