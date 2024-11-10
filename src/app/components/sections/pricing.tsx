@@ -29,7 +29,7 @@ const PricingTier = ({
 		className={cn(
 			"relative h-full p-6 bg-card transition-all duration-300",
 			isPopular && "border-secondary shadow-lg",
-			"hover:scale-[1.2] hover:shadow-lg"
+			"hover:scale-[1.1] hover:shadow-lg"
 		)}>
 		{isPopular && (
 			<div className='absolute -top-3 left-1/2 -translate-x-1/2'>
