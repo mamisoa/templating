@@ -10,11 +10,9 @@ import { Footer } from "@/src/app/components/footer/content";
 // Import services page specific sections
 import { ServicesHero } from "@/src/app/components/sections/services/hero";
 import { ServicesOverview } from "../components/sections/services/overview";
-import { ServiceDetails } from "../components/sections/services/details";
-import { ProcessFlow } from "../components/sections/services/process-flow";
+
 import { Integrations } from "../components/sections/services/integrations";
 import { ServicesCTA } from "../components/sections/services/cta";
-import { ServicesComparison } from "../components/sections/services/comparaison";
 
 export const metadata: Metadata = {
 	title: "Our Services | myleanstartup.ai - AI-Powered Lean Startup Validation",
@@ -65,22 +63,7 @@ export default function ServicesPage() {
 					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<ServiceDetails />
-					</section>
-
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<ProcessFlow />
-					</section>
-
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<Integrations />
-					</section>
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<ServicesComparison />
-					</section>
-
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<ServicesCTA />
 					</section>
 
 					{/* Footer */}

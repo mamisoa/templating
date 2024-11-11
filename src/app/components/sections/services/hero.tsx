@@ -7,8 +7,7 @@ import { ArrowRight, Bot, Sparkles, Target } from "lucide-react";
 
 export function ServicesHero() {
 	const scrollToOverview = () => {
-		// Get the second section (overview section) - it's the second full-height section after hero
-		const overviewSection = document.querySelectorAll("section")[1];
+		const overviewSection = document.getElementById("services-overview");
 		overviewSection?.scrollIntoView({ behavior: "smooth" });
 	};
 
@@ -111,7 +110,7 @@ export function ServicesHero() {
 							<ArrowRight className='ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1' />
 						</Button>
 
-						{/* Optional: Add a subtle bounce animation to draw attention to the scroll action */}
+						{/* Bounce animation for scroll indicator */}
 						<motion.div
 							className='absolute -bottom-8 left-1/2 transform -translate-x-1/2'
 							animate={{
