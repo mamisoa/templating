@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/src/app/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Bot, Brain, Code } from "lucide-react";
 
 export function AboutHero() {
 	return (
@@ -22,14 +22,26 @@ export function AboutHero() {
 			{/* Content Container */}
 			<div className='relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				<div className='flex flex-col items-center text-center space-y-8'>
-					{/* Title */}
+					{/* Innovation Badge */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
+						className='inline-flex items-center gap-2 rounded-full px-6 py-2 bg-secondary/10 border border-secondary/20 text-secondary'>
+						<Bot className='h-4 w-4' />
+						<span className='text-sm font-medium'>Part of transtorm.ai</span>
+					</motion.div>
+
+					{/* Title */}
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5, delay: 0.1 }}
 						className='space-y-4'>
 						<h1 className='text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight'>
-							About transtorm.ai
+							Innovating Startup
+							<br />
+							Validation
 						</h1>
 						<div className='h-1 w-24 bg-primary mx-auto rounded-full' />
 					</motion.div>
@@ -40,10 +52,45 @@ export function AboutHero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.2 }}
 						className='text-xl text-muted-foreground max-w-2xl'>
-						Empowering entrepreneurs with AI-driven tools to validate and build
-						successful businesses. We're on a mission to reduce startup failure
-						rates through data-driven decision making.
+						Born from the innovative spirit of transtorm.ai, myleanstartup.ai
+						transforms the way entrepreneurs validate their ideas through
+						AI-powered automation and data-driven methodologies.
 					</motion.p>
+
+					{/* Features */}
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5, delay: 0.3 }}
+						className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl w-full'>
+						{[
+							{
+								icon: Brain,
+								title: "AI-Powered",
+								description: "Advanced algorithms for deeper insights",
+							},
+							{
+								icon: Code,
+								title: "Automation",
+								description: "Streamlined validation processes",
+							},
+							{
+								icon: Bot,
+								title: "Innovation",
+								description: "Cutting-edge tech solutions",
+							},
+						].map((feature) => (
+							<div
+								key={feature.title}
+								className='flex flex-col items-center space-y-2 p-4'>
+								<feature.icon className='h-6 w-6 text-primary' />
+								<h3 className='font-semibold'>{feature.title}</h3>
+								<p className='text-sm text-muted-foreground text-center'>
+									{feature.description}
+								</p>
+							</div>
+						))}
+					</motion.div>
 
 					{/* CTA */}
 					<motion.div
@@ -51,27 +98,9 @@ export function AboutHero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.4 }}>
 						<Button size='lg' className='h-12 px-8'>
-							Learn Our Story
+							Discover Our Journey
 							<ArrowRight className='ml-2 h-4 w-4' />
 						</Button>
-					</motion.div>
-
-					{/* Stats */}
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, delay: 0.6 }}
-						className='grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8'>
-						{[
-							{ label: "Startups Helped", value: "500+" },
-							{ label: "Success Rate", value: "85%" },
-							{ label: "Team Members", value: "50+" },
-						].map((stat) => (
-							<div key={stat.label} className='text-center'>
-								<div className='text-3xl font-bold mb-2'>{stat.value}</div>
-								<div className='text-muted-foreground'>{stat.label}</div>
-							</div>
-						))}
 					</motion.div>
 				</div>
 			</div>

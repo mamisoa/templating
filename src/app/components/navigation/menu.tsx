@@ -1,3 +1,4 @@
+// src/app/components/navigation/menu.tsx
 "use client";
 
 import React from "react";
@@ -18,7 +19,6 @@ export function NavigationMenu() {
 	const pathname = usePathname();
 
 	const menuItems = [
-		{ label: "Home", href: "/" },
 		{ label: "About", href: "/about" },
 		{ label: "Services", href: "#services" },
 		{ label: "Use Cases", href: "#use-cases" },

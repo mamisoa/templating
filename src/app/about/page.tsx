@@ -9,23 +9,22 @@ import { Footer } from "@/src/app/components/footer/content";
 
 // Import about page specific sections
 import { AboutHero } from "@/src/app/components/sections/about/hero";
-import { OurStory } from "@/src/app/components/sections/about/our-story";
-import { OurMission } from "@/src/app/components/sections/about/our-mission";
-import { OurValues } from "@/src/app/components/sections/about/our-values";
-import { TeamSection } from "@/src/app/components/sections/about/team";
-import { Careers } from "@/src/app/components/sections/about/careers";
-import { ContactSection } from "@/src/app/components/sections/about/contact";
+import { OurStory } from "../components/sections/about/our-story";
+import { OurMission } from "../components/sections/about/our-mission";
+import { OurValues } from "../components/sections/about/our-values";
+import { ContactSection } from "../components/sections/about/contact";
 
 export const metadata: Metadata = {
-	title: "About Us | Lean Startup Project Assessment Tool",
+	title: "About Us | myleanstartup.ai - AI-Powered Lean Startup Validation",
 	description:
 		"Learn about our mission to help entrepreneurs validate and build successful businesses through AI-powered lean startup methodologies.",
 	openGraph: {
-		title: "About transtorm.ai - AI-Powered Lean Startup Validation Platform",
+		title:
+			"About myleanstartup.ai - AI-Powered Lean Startup Validation Platform",
 		description:
-			"Learn about our mission to help entrepreneurs validate and build successful businesses through AI-powered lean startup methodologies.",
+			"Discover how we're revolutionizing startup validation with AI-powered tools and lean methodology.",
 		type: "website",
-		url: "https://transtorm.ai/about",
+		url: "https://myleanstartup.ai/about",
 	},
 };
 
@@ -69,14 +68,6 @@ export default function AboutPage() {
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<OurValues />
-					</section>
-
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<TeamSection />
-					</section>
-
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<Careers />
 					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
