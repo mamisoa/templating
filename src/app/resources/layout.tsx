@@ -11,11 +11,13 @@ export default function ResourcesLayout({
 		<div className='relative h-screen overflow-hidden'>
 			{/* Main content area with sidebar */}
 			<div className='fixed top-14 inset-x-0 bottom-0 flex'>
-				{/* Sidebar */}
-				<ResourcesSidebar />
+				{/* Sidebar - Added z-10 to ensure it's above the content */}
+				<div className='relative z-10'>
+					<ResourcesSidebar />
+				</div>
 
-				{/* Main content */}
-				<main className='flex-1 overflow-y-auto'>{children}</main>
+				{/* Main content - Added z-0 to ensure it's below the sidebar */}
+				<main className='flex-1 overflow-y-auto z-0'>{children}</main>
 			</div>
 		</div>
 	);

@@ -40,7 +40,7 @@ export function ResourcesSidebar() {
 	};
 
 	return (
-		<div className='w-64 border-r bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+		<div className='w-64 border-r backdrop-blur'>
 			<div className='space-y-4 py-4'>
 				<div className='px-3 py-2'>
 					<h2 className='mb-2 px-4 text-lg font-semibold'>Resources</h2>
