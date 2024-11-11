@@ -1,10 +1,9 @@
-// src/app/components/navigation/menu.tsx
 "use client";
 
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/src/app/components/ui/button";
 import {
 	Sheet,
@@ -14,11 +13,14 @@ import {
 	SheetTitle,
 } from "@/src/app/components/ui/sheet";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/src/app/components/ui/dropdown-menu";
+	NavigationMenu as NavigationMenuComponent,
+	NavigationMenuContent,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+	navigationMenuTriggerStyle,
+} from "@/src/app/components/ui/navigation-menu";
 import { cn } from "@/src/lib/utils";
 
 export function NavigationMenu() {
@@ -52,45 +54,53 @@ export function NavigationMenu() {
 
 	// Desktop Menu
 	const DesktopMenu = () => (
-		<nav className='hidden md:flex items-center space-x-6'>
-			{menuItems.map((item) =>
-				item.dropdown ? (
-					<DropdownMenu key={item.label}>
-						<DropdownMenuTrigger className='flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary'>
-							{item.label}
-							<ChevronDown className='h-4 w-4' />
-						</DropdownMenuTrigger>
-						<DropdownMenuContent align='start'>
-							{item.items?.map((subItem) => (
-								<DropdownMenuItem key={subItem.href}>
-									<Link
-										href={subItem.href}
-										className={cn(
-											"w-full text-sm",
-											isActiveLink(subItem.href) && "text-primary font-semibold"
-										)}>
-										{subItem.label}
-									</Link>
-								</DropdownMenuItem>
-							))}
-						</DropdownMenuContent>
-					</DropdownMenu>
-				) : (
-					<Link
-						key={item.label}
-						href={item.href}
-						className={cn(
-							"text-sm font-medium transition-colors hover:text-primary",
-							isActiveLink(item.href) && "text-primary font-semibold"
-						)}>
-						{item.label}
-					</Link>
-				)
-			)}
-		</nav>
+		<NavigationMenuComponent className='hidden md:flex'>
+			<NavigationMenuList>
+				{menuItems.map((item) =>
+					item.dropdown ? (
+						<NavigationMenuItem key={item.label}>
+							<NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
+							<NavigationMenuContent>
+								<ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
+									{item.items?.map((subItem) => (
+										<li key={subItem.href}>
+											<NavigationMenuLink asChild>
+												<Link
+													href={subItem.href}
+													className={cn(
+														"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+														isActiveLink(subItem.href) &&
+															"bg-accent text-accent-foreground"
+													)}>
+													<div className='text-sm font-medium leading-none'>
+														{subItem.label}
+													</div>
+												</Link>
+											</NavigationMenuLink>
+										</li>
+									))}
+								</ul>
+							</NavigationMenuContent>
+						</NavigationMenuItem>
+					) : (
+						<NavigationMenuItem key={item.label}>
+							<Link href={item.href} legacyBehavior passHref>
+								<NavigationMenuLink
+									className={cn(
+										navigationMenuTriggerStyle(),
+										isActiveLink(item.href) && "text-primary font-semibold"
+									)}>
+									{item.label}
+								</NavigationMenuLink>
+							</Link>
+						</NavigationMenuItem>
+					)
+				)}
+			</NavigationMenuList>
+		</NavigationMenuComponent>
 	);
 
-	// Mobile Menu (updated to include dropdown items)
+	// Mobile Menu (unchanged)
 	const MobileMenu = () => (
 		<Sheet>
 			<SheetTrigger asChild>
@@ -158,4 +168,4 @@ export function NavigationMenu() {
 	);
 }
 
-export default NavigationMenu;
+export { NavigationMenu as NavigationMenuComponent };
