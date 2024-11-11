@@ -78,6 +78,7 @@ export default function ServicesPage() {
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<ServicesComparison />
 					</section>
+
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<ServicesCTA />
 					</section>
