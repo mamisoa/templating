@@ -35,7 +35,7 @@ export function NavigationMenu() {
 	const menuItems = [
 		{ label: "About", href: "/about" },
 		{ label: "Services", href: "/services" },
-		{ label: "Use Cases", href: "#use-cases" },
+		{ label: "Use Cases", href: "/use-cases" },
 		{
 			label: "Resources",
 			href: "/resources",
