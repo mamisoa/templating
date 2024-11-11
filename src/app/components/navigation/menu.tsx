@@ -59,7 +59,14 @@ export function NavigationMenu() {
 				{menuItems.map((item) =>
 					item.dropdown ? (
 						<NavigationMenuItem key={item.label}>
-							<NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
+							<NavigationMenuTrigger>
+								<Link
+									href={item.href}
+									className='mr-4 hover:text-primary'
+									onClick={(e) => e.stopPropagation()}>
+									{item.label}
+								</Link>
+							</NavigationMenuTrigger>
 							<NavigationMenuContent>
 								<ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
 									{item.items?.map((subItem) => (
