@@ -1,18 +1,35 @@
+// src/app/about/page.tsx
+import type { Metadata } from "next";
 import { Button } from "@/src/app/components/ui/button";
 import { Separator } from "@/src/app/components/ui/separator";
 import { ThemeToggle } from "@/src/app/components/theme-toggle";
 import { NavigationLogo } from "@/src/app/components/navigation/logo";
 import { NavigationMenu } from "@/src/app/components/navigation/menu";
-import { HeroSection } from "@/src/app/components/sections/home/hero";
-import { KeyBenefits } from "@/src/app/components/sections/home/key-benefits";
-import { HowItWorks } from "@/src/app/components/sections/home/how-it-works";
-import { FeaturesShowcase } from "@/src/app/components/sections/home/features";
-import { PricingSection } from "@/src/app/components/sections/home/pricing";
-import { SocialProof } from "@/src/app/components/sections/home/social-proof";
-import { CallToAction } from "@/src/app/components/sections/home/cta";
 import { Footer } from "@/src/app/components/footer/content";
 
-export default function Home() {
+// Import about page specific sections
+import { AboutHero } from "@/src/app/components/sections/about/hero";
+import { OurStory } from "@/src/app/components/sections/about/our-story";
+import { OurMission } from "@/src/app/components/sections/about/our-mission";
+import { OurValues } from "@/src/app/components/sections/about/our-values";
+import { TeamSection } from "@/src/app/components/sections/about/team";
+import { Careers } from "@/src/app/components/sections/about/careers";
+import { ContactSection } from "@/src/app/components/sections/about/contact";
+
+export const metadata: Metadata = {
+	title: "About Us | Lean Startup Project Assessment Tool",
+	description:
+		"Learn about our mission to help entrepreneurs validate and build successful businesses through AI-powered lean startup methodologies.",
+	openGraph: {
+		title: "About transtorm.ai - AI-Powered Lean Startup Validation Platform",
+		description:
+			"Learn about our mission to help entrepreneurs validate and build successful businesses through AI-powered lean startup methodologies.",
+		type: "website",
+		url: "https://transtorm.ai/about",
+	},
+};
+
+export default function AboutPage() {
 	return (
 		<div className='relative h-screen overflow-hidden'>
 			{/* Navigation - fixed at top */}
@@ -21,18 +38,12 @@ export default function Home() {
 					<div className='flex h-full items-center justify-between'>
 						<div className='flex items-center space-x-6'>
 							<NavigationLogo />
-							<Separator
-								orientation='vertical'
-								className='h-6 hidden md:block'
-							/>
+							<Separator orientation='vertical' className='h-6' />
 							<NavigationMenu />
 						</div>
-						<div className='hidden md:flex items-center space-x-4'>
-							<Button variant='outline'>Login</Button>
+						<div className='flex items-center space-x-4'>
 							<Button>Get Started</Button>
-							<ThemeToggle />
-						</div>
-						<div className='flex md:hidden items-center space-x-4'>
+							<Button variant='outline'>Login</Button>
 							<ThemeToggle />
 						</div>
 					</div>
@@ -45,31 +56,31 @@ export default function Home() {
 				<div className='min-h-full'>
 					{/* Individual sections - each takes exactly the visible area */}
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<HeroSection />
+						<AboutHero />
 					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<KeyBenefits />
+						<OurStory />
 					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<HowItWorks />
+						<OurMission />
 					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<FeaturesShowcase />
+						<OurValues />
 					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<PricingSection />
+						<TeamSection />
 					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<SocialProof />
+						<Careers />
 					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<CallToAction />
+						<ContactSection />
 					</section>
 
 					{/* Footer */}
