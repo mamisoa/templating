@@ -6,6 +6,13 @@ import { Button } from "@/src/app/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export function UseCasesHero() {
+	const scrollToAfter = () => {
+		const nextSection = document.querySelector(
+			"[data-section='healthcare-before']"
+		);
+		nextSection?.scrollIntoView({ behavior: "smooth" });
+	};
+
 	return (
 		<div
 			className='h-[calc(100vh-3.5rem)] w-full relative flex items-center justify-center overflow-hidden'
@@ -37,21 +44,28 @@ export function UseCasesHero() {
 
 						{/* Title */}
 						<h1 className='text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight'>
-							Real Validation
+							Uncover
 							<br />
-							Journey Stories
+							Your Own
+							<br />
+							Success Path
 						</h1>
 
 						{/* Description */}
 						<p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
-							Discover how companies across different industries validated their
-							ideas and built successful businesses using our platform.
+							Explore success stories from across industries that guide you
+							through validation steps, actionable insights, and growth metrics.
+							Dive into these journeys and imagine how our platform can help
+							shape your own path to success.
 						</p>
 
 						{/* CTA */}
 						<div>
-							<Button size='lg' className='group'>
-								Start Your Success Story
+							<Button
+								size='lg'
+								onClick={scrollToAfter}
+								className='group text-xl'>
+								Find your own story
 								<ArrowRight className='ml-2 h-4 w-4 transition-transform group-hover:translate-x-1' />
 							</Button>
 						</div>
