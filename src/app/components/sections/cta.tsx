@@ -10,9 +10,9 @@ export function CallToAction() {
 			className='h-[calc(100vh-3.5rem)] w-full relative flex items-center justify-center overflow-hidden'
 			style={{
 				background: `linear-gradient(135deg, 
-          hsl(var(--primary)/0.15) 0%, 
-          hsl(var(--background)) 50%,
-          hsl(var(--secondary)/0.15) 100%)`,
+				hsl(var(--primary)/0.15) 0%, 
+				hsl(var(--background)) 50%,
+				hsl(var(--secondary)/0.15) 100%)`,
 			}}>
 			{/* Background Elements */}
 			<div className='absolute inset-0 w-full h-full bg-grid-pattern opacity-10' />

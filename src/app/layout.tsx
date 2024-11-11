@@ -37,7 +37,7 @@ export default function RootLayout({
 					disableTransitionOnChange>
 					{children}
 					<ToastContainer
-						position='bottom-right'
+						position='top-right'
 						autoClose={5000}
 						hideProgressBar={false}
 						newestOnTop
