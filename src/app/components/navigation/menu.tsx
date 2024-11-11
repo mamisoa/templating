@@ -20,7 +20,7 @@ export function NavigationMenu() {
 
 	const menuItems = [
 		{ label: "About", href: "/about" },
-		{ label: "Services", href: "#services" },
+		{ label: "Services", href: "/services" }, // Updated to actual route
 		{ label: "Use Cases", href: "#use-cases" },
 		{ label: "Resources", href: "#resources" },
 		{ label: "Pricing", href: "#pricing" },
