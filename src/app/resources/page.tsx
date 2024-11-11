@@ -8,7 +8,6 @@ import { NavigationMenu } from "@/src/app/components/navigation/menu";
 import { Footer } from "@/src/app/components/footer/content";
 
 // Import resources page specific sections
-import { ResourcesHero } from "../components/sections/resources/hero";
 import { TemplatesAndTools } from "../components/sections/resources/templates-and-tools";
 import { Documentation } from "../components/sections/resources/documentation";
 import { Community } from "../components/sections/resources/community";
@@ -52,9 +51,6 @@ export default function ResourcesPage() {
 				{/* Sections container */}
 				<div className='min-h-full'>
 					{/* Individual sections - each takes exactly the visible area */}
-					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
-						<ResourcesHero />
-					</section>
 
 					<section className='h-[calc(100vh-3.5rem)] snap-start snap-always'>
 						<TemplatesAndTools />
