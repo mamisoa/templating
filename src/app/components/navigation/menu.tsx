@@ -1,4 +1,8 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { Button } from "@/src/app/components/ui/button";
 import {
@@ -8,26 +12,40 @@ import {
 	SheetHeader,
 	SheetTitle,
 } from "@/src/app/components/ui/sheet";
+import { cn } from "@/src/lib/utils";
 
 export function NavigationMenu() {
+	const pathname = usePathname();
+
 	const menuItems = [
-		{ label: "About", href: "#about" },
+		{ label: "Home", href: "/" },
+		{ label: "About", href: "/about" },
 		{ label: "Services", href: "#services" },
 		{ label: "Use Cases", href: "#use-cases" },
 		{ label: "Resources", href: "#resources" },
 		{ label: "Pricing", href: "#pricing" },
 	];
 
+	const isActiveLink = (href: string) => {
+		if (href === "/") {
+			return pathname === "/";
+		}
+		return pathname.startsWith(href);
+	};
+
 	// Desktop Menu
 	const DesktopMenu = () => (
 		<nav className='hidden md:flex items-center space-x-6'>
 			{menuItems.map((item) => (
-				<a
+				<Link
 					key={item.label}
 					href={item.href}
-					className='text-sm font-medium transition-colors hover:text-primary'>
+					className={cn(
+						"text-sm font-medium transition-colors hover:text-primary",
+						isActiveLink(item.href) && "text-primary font-semibold"
+					)}>
 					{item.label}
-				</a>
+				</Link>
 			))}
 		</nav>
 	);
@@ -49,12 +67,15 @@ export function NavigationMenu() {
 					className='flex flex-col space-y-4 mt-8'
 					aria-label='Mobile navigation'>
 					{menuItems.map((item) => (
-						<a
+						<Link
 							key={item.label}
 							href={item.href}
-							className='text-sm font-medium transition-colors hover:text-primary py-2'>
+							className={cn(
+								"text-sm font-medium transition-colors hover:text-primary py-2",
+								isActiveLink(item.href) && "text-primary font-semibold"
+							)}>
 							{item.label}
-						</a>
+						</Link>
 					))}
 					<div className='flex flex-col space-y-2 mt-4 pt-4 border-t'>
 						<Button variant='outline' className='w-full'>
