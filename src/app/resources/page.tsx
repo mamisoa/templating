@@ -51,15 +51,24 @@ export default function ResourcesPage() {
 				{/* Main Content Area */}
 				<main className='flex-1 ml-64'>
 					<div className='container mx-auto'>
-						<section id='templates' className='min-h-screen'>
+						<section
+							id='templates'
+							className='min-h-screen scroll-mt-20'
+							style={{ scrollMarginTop: "3.5rem" }}>
 							<TemplatesAndTools />
 						</section>
 
-						<section id='documentation' className='min-h-screen'>
+						<section
+							id='documentation'
+							className='min-h-screen scroll-mt-20'
+							style={{ scrollMarginTop: "3.5rem" }}>
 							<Documentation />
 						</section>
 
-						<section id='community' className='min-h-screen'>
+						<section
+							id='community'
+							className='min-h-screen scroll-mt-20'
+							style={{ scrollMarginTop: "3.5rem" }}>
 							<Community />
 						</section>
 					</div>

@@ -81,6 +81,9 @@
 	p {
 		@apply font-[family-name:var(--font-geist-sans)];
 	}
+	section[id] {
+		scroll-margin-top: 3.5rem;
+	}
 }
 
 .gradient-bg {

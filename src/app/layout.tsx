@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
+			<head>
+				<meta name='robots' content='noindex,nofollow' />
+			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen w-full bg-background`}>
 				<ThemeProvider
