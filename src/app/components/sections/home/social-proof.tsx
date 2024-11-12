@@ -2,10 +2,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote, UserCircle2, User2 } from "lucide-react";
+import { Star, Quote, User2 } from "lucide-react";
 import { Card } from "@/src/app/components/ui/card";
 import { useMemo } from "react";
-import Image from "next/image";
 import { cn } from "@/src/lib/utils";
 
 type Testimonial = {
@@ -18,13 +17,6 @@ type Testimonial = {
 	gender: "male" | "female";
 	// image field is kept for future use
 	image?: string;
-};
-
-type CompanyLogo = {
-	name: string;
-	logo: string;
-	width: number;
-	height: number;
 };
 
 const TestimonialAvatar = ({ gender }: { gender: "male" | "female" }) => (
@@ -70,37 +62,6 @@ export function SocialProof() {
 					"The hypothesis testing dashboard helped us pivot early and save resources. Now we're growing faster than ever.",
 				rating: 5,
 				gender: "female",
-			},
-		],
-		[]
-	);
-
-	const companyLogos: CompanyLogo[] = useMemo(
-		() => [
-			{ name: "TechFlow", logo: "/logos/techflow.svg", width: 120, height: 40 },
-			{
-				name: "InnovateCorp",
-				logo: "/logos/innovate.svg",
-				width: 130,
-				height: 40,
-			},
-			{
-				name: "GreenTech",
-				logo: "/logos/greentech.svg",
-				width: 110,
-				height: 40,
-			},
-			{
-				name: "FutureScale",
-				logo: "/logos/futurescale.svg",
-				width: 140,
-				height: 40,
-			},
-			{
-				name: "DataDrive",
-				logo: "/logos/datadrive.svg",
-				width: 120,
-				height: 40,
 			},
 		],
 		[]
@@ -195,7 +156,7 @@ export function SocialProof() {
 									<div className='relative'>
 										<Quote className='h-8 w-8 text-primary/20 absolute -top-2 -left-2' />
 										<p className='text-muted-foreground relative z-10 pl-4'>
-											"{testimonial.content}"
+											&quot;{testimonial.content}&quot;
 										</p>
 									</div>
 								</div>

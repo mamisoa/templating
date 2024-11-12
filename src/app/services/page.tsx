@@ -12,7 +12,6 @@ import { ServicesHero } from "@/src/app/components/sections/services/hero";
 import { ServicesOverview } from "../components/sections/services/overview";
 
 import { Integrations } from "../components/sections/services/integrations";
-import { ServicesCTA } from "../components/sections/services/cta";
 
 export const metadata: Metadata = {
 	title: "Our Services | myleanstartup.ai - AI-Powered Lean Startup Validation",
