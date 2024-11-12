@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/src/app/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { cn } from "@/src/lib/utils";
 
 export function UseCasesHero() {
 	const scrollToAfter = () => {
@@ -42,13 +43,39 @@ export function UseCasesHero() {
 							</span>
 						</div>
 
-						{/* Title */}
-						<h1 className='text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight'>
-							Uncover
-							<br />
-							Your Own
-							<br />
-							Success Path
+						{/* Title with graduating sizes and gradient effect */}
+						<h1 className='font-bold tracking-tight space-y-2'>
+							<span className='block text-5xl md:text-7xl lg:text-8xl opacity-85'>
+								Uncover
+							</span>
+							<span className='block text-6xl md:text-8xl lg:text-9xl opacity-90'>
+								Your Own
+							</span>
+							<div className='relative inline-block'>
+								<span
+									className={cn(
+										"block text-7xl md:text-9xl lg:text-[10rem] leading-none",
+										"bg-clip-text text-transparent",
+										"relative z-10"
+									)}
+									style={{
+										backgroundImage: `linear-gradient(
+                      90deg,
+                      #60a5fa,
+                      #818cf8,
+                      #a78bfa,
+                      #34d399,
+                      #10b981,
+                      #0ea5e9,
+                      #60a5fa
+                    )`,
+										backgroundSize: "400% 100%",
+										animation: "gradientFlow 5s linear infinite",
+										WebkitBackgroundClip: "text",
+									}}>
+									Success Path
+								</span>
+							</div>
 						</h1>
 
 						{/* Description */}
