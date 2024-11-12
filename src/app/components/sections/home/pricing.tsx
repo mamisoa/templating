@@ -155,7 +155,8 @@ export function PricingSection() {
           hsl(var(--secondary)/0.1) 0%, 
           hsl(var(--background)) 50%,
           hsl(var(--accent)/0.1) 100%)`,
-			}}>
+			}}
+			id='pricing'>
 			{/* Background Elements */}
 			<div className='absolute inset-0 w-full h-full bg-grid-pattern opacity-5' />
 			<div className='absolute inset-0 w-full h-full mask-radial-faded' />

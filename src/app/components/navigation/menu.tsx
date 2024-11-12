@@ -42,7 +42,7 @@ export function NavigationMenu() {
 			dropdown: true,
 			items: resourcesLinks,
 		},
-		{ label: "Pricing", href: "#pricing" },
+		{ label: "Pricing", href: "/#pricing" },
 	];
 
 	const isActiveLink = (href: string) => {
