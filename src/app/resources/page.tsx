@@ -6,6 +6,9 @@ import { ThemeToggle } from "@/src/app/components/theme-toggle";
 import { NavigationLogo } from "@/src/app/components/navigation/logo";
 import { NavigationMenu } from "@/src/app/components/navigation/menu";
 import { ResourcesSidebar } from "../components/sections/resources/sidebar";
+import { TemplatesAndTools } from "../components/sections/resources/templates-and-tools";
+import { Documentation } from "../components/sections/resources/documentation";
+import { Community } from "../components/sections/resources/community";
 
 export const metadata: Metadata = {
 	title: "Resources | myleanstartup.ai - AI-Powered Lean Startup Validation",
@@ -46,9 +49,19 @@ export default function ResourcesPage() {
 				<ResourcesSidebar />
 
 				{/* Main Content Area */}
-				<main className='flex-1 overflow-y-auto'>
-					<div className='container mx-auto px-4 py-8'>
-						{/* Content sections will go here */}
+				<main className='flex-1 ml-64'>
+					<div className='container mx-auto'>
+						<section id='templates' className='min-h-screen'>
+							<TemplatesAndTools />
+						</section>
+
+						<section id='documentation' className='min-h-screen'>
+							<Documentation />
+						</section>
+
+						<section id='community' className='min-h-screen'>
+							<Community />
+						</section>
 					</div>
 				</main>
 			</div>
