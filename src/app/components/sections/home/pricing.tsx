@@ -29,7 +29,7 @@ const PricingTier = ({
 		className={cn(
 			"relative h-full p-6 bg-card transition-all duration-300",
 			isPopular && "border-secondary shadow-lg",
-			"hover:scale-[1.1] hover:shadow-lg"
+			"hover:scale-105 hover:shadow-lg sm:hover:scale-[1.1]"
 		)}>
 		{isPopular && (
 			<div className='absolute -top-3 left-1/2 -translate-x-1/2'>
@@ -160,7 +160,6 @@ export function PricingSection() {
 			{/* Background Elements */}
 			<div className='absolute inset-0 w-full h-full bg-grid-pattern opacity-5' />
 			<div className='absolute inset-0 w-full h-full mask-radial-faded' />
-
 			{/* Content Container */}
 			<div className='relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
 				{/* Section Header */}
@@ -185,7 +184,7 @@ export function PricingSection() {
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ once: true }}
-					className='grid md:grid-cols-3 gap-8 max-w-5xl mx-auto'>
+					className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto overflow-x-visible px-4 md:px-0'>
 					{pricingTiers.map((tier) => (
 						<motion.div key={tier.name} variants={itemVariants}>
 							<PricingTier {...tier} />
